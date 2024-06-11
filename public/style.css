@@ -1,0 +1,155 @@
+/* MAIN.BLADE CSS */
+.navbar-custom {
+  background-color: rgb(144, 241, 144) !important;
+  color: rgb(7, 7, 7) !important;
+  z-index: 1; /* Set the navbar's z-index to ensure it is behind the welcome container */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link,
+.navbar-custom .navbar-toggler-icon {
+  color: black !important;
+}
+
+.navbar-custom .navbar-nav {
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar-custom .navbar-nav .nav-item {
+  margin: 10px 20px;
+}
+
+.navbar-custom .navbar-nav .nav-link.active {
+  color: rgb(95, 94, 91) !important;
+}
+
+.navbar-brand .klinik,
+.navbar-brand .hewan {
+  color: black !important;
+}
+
+.navbar-custom .navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Efek hover untuk navbar */
+.navbar-custom .nav-link:hover {
+  color: white;
+  color: white !important;
+  border-radius: 20px; /* Tambahkan border-radius jika ingin sudut membulat */
+}
+
+/* Gaya tombol pencarian */
+.navbar-custom .btn-outline-success:hover {
+  background-color: white;
+  color: white;
+}
+
+/* HOME CSS */
+.half-page-bg {
+  top: 40px; 
+  left: -5%;
+  position: relative;
+  width: 1222px;
+  height: 150vh; /* Mengatur tinggi halaman penuh */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box; /* Memastikan padding termasuk dalam lebar elemen */
+}
+
+.background-img {
+  position: absolute;
+  top: 390px;
+  left: 13.7%; /* Menggeser gambar ke kanan */
+  transform: translateX(-10%); /* Menyesuaikan pergeseran agar konten tetap terlihat sedikit */
+  width: 90%;
+  height: 100%;
+  object-fit: cover; /* Mengatur gambar agar menutupi seluruh kontainer */
+  z-index: 1; /* Memastikan gambar berada di belakang konten */
+  border-radius: 20px;
+}
+
+.content-container {
+  position: relative;
+  background: rgb(144, 241, 144); /* Memberikan background putih transparan pada konten */
+  padding: 20px;
+  top: -300px;
+  border-radius: 20px;
+  width: 1282px; /* Mengatur lebar konten penuh */
+  height: 1100px;
+  z-index: -1; /* Memastikan konten berada di depan gambar */
+  box-sizing: border-box; /* Memastikan padding termasuk dalam lebar elemen */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-button,
+.register-button {
+  background-color: transparent;
+  color: green;
+  padding: 10px 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0 0px; /* Mengatur jarak antara tombol */
+}
+
+.login-button:hover,
+.register-button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.welcome-container {
+  position: absolute; /* Changed to absolute positioning */
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; /* Ensure it is above the navbar */
+  text-align: center;
+  margin-top: 20px; /* Adjust as needed */
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-container p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* about css */
+.half-page-bg1 {
+  background-size: cover;
+  background-position: center;
+  height: 90vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+.content-container1 {
+  background: rgb(144, 241, 144); /* Memberikan background putih transparan pada konten */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%; /* Mengatur lebar konten penuh */
+  max-width: 1200px; /* Memberikan batas maksimal lebar konten */
+  box-sizing: border-box; /* Memastikan padding termasuk dalam lebar elemen */
+}
+
+/* login regis css */
+body {
+  font-family: 'Poppins', sans-serif;
+}
