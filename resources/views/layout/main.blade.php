@@ -12,7 +12,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
-      <img src="LogoKlinik.png" alt="Klinik Hewan Logo" style="height: 150px;">
+        <img src="LogoKlinik.png" alt="Klinik Hewan Logo" style="height: 150px;">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
     </div>
   </nav>
 
-  <!-- Modal -->
+  <!-- Modal for User Profile -->
   <div class="modal fade" id="userProfileModal" tabindex="-1" aria-labelledby="userProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -68,6 +68,31 @@
     </div>
   </div>
 
+  <!-- Modal for Doctor Schedule -->
+  <div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="scheduleModalLabel">Jadwal Dokter</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Hari</th>
+                <th>Waktu</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleTableBody">
+              <!-- Jadwal akan dimuat di sini dengan AJAX -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container mt-4">
     @yield('container')
   </div>
@@ -75,17 +100,34 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
   <script>
-    // Fungsi untuk menampilkan informasi pengguna
-    function showUserProfile() {
-      // Simpan informasi pengguna di sini, misalnya:
-      var username = "Nama Pengguna";
-      var userProfile = "Profil Pengguna";
- 
-      // Setel teks modal sesuai dengan informasi pengguna
-      document.getElementById("username").textContent = username;
-      document.getElementById("userProfile").textContent = userProfile;
-    }
-  </script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Handler untuk membuka modal dan memuat data jadwal
+      var scheduleModal = document.getElementById('scheduleModal');
+      scheduleModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;  // Tombol yang membuka modal
+        var doctorId = button.getAttribute('data-doctor-id');  // Ambil data doctor ID
 
+        // AJAX request untuk mengambil jadwal
+        fetch(`/schedules/${doctorId}`)
+          .then(response => response.json())
+          .then(data => {
+            var tableBody = document.getElementById('scheduleTableBody');
+            tableBody.innerHTML = '';  // Kosongkan tabel sebelumnya
+
+            data.forEach(function (schedule) {
+              var row = document.createElement('tr');
+              var dayCell = document.createElement('td');
+              dayCell.textContent = schedule.day;
+              var timeCell = document.createElement('td');
+              timeCell.textContent = schedule.time;
+              row.appendChild(dayCell);
+              row.appendChild(timeCell);
+              tableBody.appendChild(row);
+            });
+          })
+          .catch(error => console.error('Error fetching schedule:', error));
+      });
+    });
+  </script>
 </body>
 </html>
