@@ -5,8 +5,8 @@
 
 <div class="welcome-container">
     <h1>Selamat Datang!</h1>
-    <p>Sistem klinik hewan online ini adalah untuk mengatasi</p>
-    <p>beberapa kendala dalam proses mendapatkan layanan di klinik hewan saat ini.</p>
+    <p>Sistem klinik hewan online ini adalah untuk mengatasi
+    beberapa kendala dalam proses mendapatkan layanan di klinik hewan saat ini.</p>
     <a href="{{ url('/login') }}" class="login-button">Masuk</a>
     <a href="{{ url('/register') }}" class="register-button">Daftar</a>
 </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\jadwalController;
 use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,14 @@ Route::get('/registrasi', function () {
         "title" => "Registrasi"
     ]);
 });
+
+// use App\Http\Middleware\Authenticate;
+
+// Route::get('/', function () {
+//     return view('home');
+// })->middleware(Authenticate::class);
+
+
 
 Route::get('/', function () {
     return view('home', [
@@ -68,8 +77,11 @@ use App\Http\Controllers\janjiTemuController;
 Route::get('janjiTemu', [janjiTemuController::class, 'showjanjiTemuForm'])->name('janjiTemu');
 Route::post('janjiTemu', [janjiTemuController::class, 'janjiTemu']);
 
+Route::get('jadwal', [jadwalController::class, 'showjadwalForm'])->name('jadwal');
+Route::post('jadwal', [jadwalController::class, 'jadwal']);
 
 Route::get('/blog', [PostController::class, 'index']);
 
 // halaman single post
 Route::get('posts/{slug}', [PostController::class, 'show']);
+
