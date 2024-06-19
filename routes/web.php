@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\jadwalController;
+use App\Http\Controllers\RegistrasiUserController;
 use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
@@ -57,11 +58,19 @@ Route::get('/login', function () {
     ]);
 });
 
-Route::get('/register', function () {
-    return view('register', [
-        "title" => "register"
-    ]);
+use Illuminate\Support\Facades\DB;
+
+Route::get('/test-connection', function () {
+    $results = DB::select('SELECT DATABASE()');
+    return response()->json($results);
 });
+
+
+// Route untuk menampilkan halaman registrasi
+Route::get('/registrasi_user', [RegistrasiUserController::class, 'register'])->name('registrasi.register');
+
+// Route untuk menangani form submission registrasi
+Route::post('/registrasi_user/registrasi', [RegistrasiUserController::class, 'store'])->name('registrasi.store');
 
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
