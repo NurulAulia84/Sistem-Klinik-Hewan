@@ -23,16 +23,16 @@
             <a class="nav-link {{ ($title === 'Home') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'About') ? 'active' : '' }}" href="/about">Dokter</a>
+            <a class="nav-link {{ ($title === 'dokter') ? 'active' : '' }}" href="/dokter">Dokter</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'Posts') ? 'active' : '' }}" href="/blog">Hewan</a>
+            <a class="nav-link {{ ($title === 'hewan') ? 'active' : '' }}" href="/hewan">Hewan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'Posts') ? 'active' : '' }}" href="/blog">Riwayat</a>
+            <a class="nav-link {{ ($title === 'Riwayat') ? 'active' : '' }}" href="/Riwayat">Riwayat</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'Posts') ? 'active' : '' }}" href="/blog">Pembayaran</a>
+            <a class="nav-link {{ ($title === 'pembayaran') ? 'active' : '' }}" href="/pembayaran">Pembayaran</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

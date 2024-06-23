@@ -54,7 +54,7 @@
   left: -5%;
   position: relative;
   width: 1222px;
-  height: 150vh; /* Mengatur tinggi halaman penuh */
+  height: 130vh; /* Mengatur tinggi halaman penuh */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +64,7 @@
 
 .background-img {
   position: absolute;
-  top: 390px;
+  top: 350px;
   left: 13.7%; /* Menggeser gambar ke kanan */
   transform: translateX(-10%); /* Menyesuaikan pergeseran agar konten tetap terlihat sedikit */
   width: 90%;
@@ -130,7 +130,7 @@
   margin-bottom: 1rem;
 }
 
-/* about css */
+/* dokter css */
 .half-page-bg1 {
   background-size: cover;
   background-position: center;
@@ -180,6 +180,64 @@
 
 
 /* login regis css */
+/* resources/css/custom.css */
+
 body {
-  font-family: 'Poppins', sans-serif;
+  background-color: #f3f4f6; /* Gray background for the body */
+}
+
+.card {
+  background-color: #ffffff; /* White background for card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+button {
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+button:hover {
+  transform: scale(1.03); /* Slightly scale up on hover */
+}
+
+.left-shadow {
+  box-shadow: -10px 0 15px -3px rgba(0, 0, 0, 0.1), -4px 0 6px -2px rgba(0, 0, 0, 0.05); /* Shadow on the left side */
+}
+
+input:focus {
+  outline: none;
+  border-color: #10b981; /* Green border on focus */
+}
+
+a {
+  color: #10b981; /* Green text color */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.checkbox:checked {
+  background-color: #10b981; /* Green checkbox */
+}
+
+.label-text {
+  color: #374151; /* Dark gray for label text */
+}
+
+/* TAMBAH JADWAL CSS */
+body {
+  color: rgb(0, 0, 0);
+  background-color: #f2f4f5;
+}
+
+div {
+  display: block;
+  min-width: 30%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+table {
+  color: rgb(0, 0, 0);
+  margin-top: 20px;
 }
