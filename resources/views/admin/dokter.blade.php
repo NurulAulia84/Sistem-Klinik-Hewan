@@ -152,7 +152,7 @@
       <label for="jamPraktek" class="form-label">Jam Praktek</label>
       <input type="time" class="form-control" id="jamPraktek" name="jamPraktek" required>
     </div>
-    <button type="submit" class="btn btn-primary">Simpan</button>
+    <button type="submit" class="login-button">Tambah</button>
   </form>
 </div>
 

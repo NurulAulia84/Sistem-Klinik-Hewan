@@ -15,7 +15,7 @@ class dokterController extends Controller
 
     public function pembayaran(Request $request)
     {
-        // Tambahkan logika login Anda di sini
+        
     }
 }
 

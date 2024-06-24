@@ -15,7 +15,7 @@ class hewanController extends Controller
 
     public function hewan(Request $request)
     {
-        // Tambahkan logika login Anda di sini
+        
     }
 }
 
