@@ -48,14 +48,14 @@ Route::get('/beranda', function () {
     ]);
 });
 
-Route::get('/dokter', function () {
-    return view('dokter', [
-        "title" => "dokter",
-        "name" => "Nurul Aulia",
-        "email" => "nrulauliaaaa@gmail.com",
-        "image" => "kucing.webp"
-    ]);
-});
+// Route::get('/dokter', function () {
+//     return view('dokter', [
+//         "title" => "dokter",
+//         "name" => "Nurul Aulia",
+//         "email" => "nrulauliaaaa@gmail.com",
+//         "image" => "kucing.webp"
+//     ]);
+// });
 
 // Route::get('/blog', function () {
 //     return view('posts', [
@@ -87,8 +87,8 @@ Route::post('Riwayat', [RiwayatController::class, 'Riwayat']);
 Route::get('hewan', [hewanController::class, 'showhewanForm'])->name('hewan');
 Route::post('hewan', [hewanController::class, 'hewan']);
 
-Route::get('TambahJadwal', [DokterAdminController::class, 'showTambahJadwalForm'])->name('TambahJadwal');
-Route::post('TambahJadwal', [DokterAdminController::class, 'TambahJadwal']);
+Route::get('DokterAdmin', [DokterAdminController::class, 'showTambahJadwalForm'])->name('DokterAdmin');
+Route::post('DokterAdmin', [DokterAdminController::class, 'DOkterAdmin']);
 
 Route::get('TambahHewan', [hewanAdminController::class, 'showTambahHewanForm'])->name('TambahHewan');
 Route::post('TambahHewan', [hewanAdminController::class, 'TambahHewan']);
@@ -99,25 +99,37 @@ Route::get('/registrasi_user', [RegistrasiUserController::class, 'register'])->n
 // Route untuk menangani form submission registrasi
 Route::post('/registrasi_user/registrasi', [RegistrasiUserController::class, 'store'])->name('registrasi.store');
 
-
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'login']);
-
 use App\Http\Controllers\RegisterController;
-
 Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 
-use App\Http\Controllers\janjiTemuController;
-
-Route::get('janjiTemu', [janjiTemuController::class, 'showjanjiTemuForm'])->name('janjiTemu');
-Route::post('janjiTemu', [janjiTemuController::class, 'janjiTemu']);
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
 
 Route::get('jadwal', [jadwalController::class, 'showjadwalForm'])->name('jadwal');
 Route::post('jadwal', [jadwalController::class, 'jadwal']);
 
 Route::get('/blog', [PostController::class, 'index']);
 
+use App\Http\Controllers\pembayaranAdminController;
+Route::get('KelolahPembayaran', [pembayaranAdminController::class, 'showPembayaranForm'])->name('KelolahPembayaran');
+Route::post('KelolahPembayaran', [pembayaranAdminController::class, 'KelolahPembayaran']);
+
+use App\Http\Controllers\reservasiAdminController;
+Route::get('KelolahReservasi', [reservasiAdminController::class, 'showReservasiForm'])->name('KelolahReservasi');
+Route::post('KelolahReservasi', [reservasiAdminController::class, 'KelolahReservasi']);
+
+use App\Http\Controllers\KelolahAkunController;
+Route::get('KelolahAkun', [KelolahAkunController::class, 'showKelolahAkunForm'])->name('KelolahAkun');
+Route::post('KelolahAkun', [KelolahAkunController::class, 'KelolahAkun']);
+
+use App\Http\Controllers\KonfirmasiJanjiController;
+Route::get('KonfirmasiJanji', [KonfirmasiJanjiController::class, 'showKonfirmasiJanjiForm'])->name('KonfirmasiJanji');
+Route::post('KonfirmasiJanji', [KonfirmasiJanjiController::class, 'KonfirmasiJanji']);
+
+use App\Http\Controllers\LayananController;
+Route::get('LayananKesehatan', [LayananController::class, 'showLayananForm'])->name('LayananKesehatan');
+Route::post('LayananKesehatan', [LayananController::class, 'LayananKesehatan']);
 
 // halaman single post
 Route::get('posts/{slug}', [PostController::class, 'show']);

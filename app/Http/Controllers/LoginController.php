@@ -13,7 +13,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        // Tambahkan logika login Anda di sini
+        
     }
 }
 

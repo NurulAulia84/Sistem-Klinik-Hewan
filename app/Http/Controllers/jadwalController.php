@@ -15,7 +15,7 @@ class jadwalController extends Controller
 
     public function jadwal(Request $request)
     {
-        // Tambahkan logika login Anda di sini
+        
     }
 }
 

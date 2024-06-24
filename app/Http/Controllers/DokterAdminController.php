@@ -15,7 +15,7 @@ class DokterAdminController extends Controller
 
     public function DokterAdmin(Request $request)
     {
-        // Tambahkan logika login Anda di sini
+        
     }
 }
 

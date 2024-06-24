@@ -24,7 +24,7 @@
             <p class="card-text">Dr. Jane Smith adalah seorang dokter hewan yang berbakat dan berdedikasi dalam bidangnya. Dengan latar belakang pendidikan yang kuat 
                     dan pengalaman klinis yang luas, dia telah menjadi salah satu ahli terkemuka dalam perawatan hewan.</p>
                     <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-doctor-id="1">Jadwal</button>
-            <a href="{{ ('janjiTemu') }}" class="login-button">Buat janji</a>
+                    <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal1" data-doctor-id="1">Janji Temu</button>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
             <p class="card-text">Dr. Elizabeth adalah seorang dokter hewan yang berbakat dan berdedikasi dalam bidangnya. Dengan latar belakang pendidikan yang kuat 
                     dan pengalaman klinis yang luas, dia telah menjadi salah satu ahli terkemuka dalam perawatan hewan.</p>
             <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-doctor-id="1">Jadwal</button>
-            <a href="{{ ('janjiTemu') }}" class="login-button">Buat janji</a>
+            <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal1" data-doctor-id="1">Janji Temu</button>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@
             <p class="card-text">Dr. Lorial Spentus adalah seorang dokter hewan yang berbakat dan berdedikasi dalam bidangnya. Dengan latar belakang pendidikan yang kuat 
                     dan pengalaman klinis yang luas, dia telah menjadi salah satu ahli terkemuka dalam perawatan hewan.</p>
             <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-doctor-id="1">Jadwal</button>
-            <a href="{{ ('janjiTemu') }}" class="login-button">Buat janji</a>
+            <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal1" data-doctor-id="1">Janji Temu</button>
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@
             <p class="card-text">Dr. Jennifer adalah seorang dokter hewan yang berbakat dan berdedikasi dalam bidangnya. Dengan latar belakang pendidikan yang kuat 
                     dan pengalaman klinis yang luas, dia telah menjadi salah satu ahli terkemuka dalam perawatan hewan.</p>
             <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-doctor-id="1">Jadwal</button>
-            <a href="{{ ('janjiTemu') }}" class="login-button">Buat janji</a>
+            <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal1" data-doctor-id="1">Janji Temu</button>
           </div>
         </div>
       </div>
@@ -114,4 +114,36 @@
     });
   });
 </script>
+
+// <!-- Modal janji temu -->
+<div class="modal fade" id="scheduleModal1" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="scheduleModalLabel">Buat Janji</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+  <form id="jadwalForm">
+  <div class="mb-3">
+      <label for="ras" class="form-label">Nama hewan</label>
+      <input type="text" class="form-control" id="ras" name="ras" required>
+    </div>
+    <div class="mb-3">
+      <label for="namaHewan" class="form-label">Tanggal</label>
+      <input type="date" class="form-control" id="namaHewan" name="namaHewan" required>
+    </div>
+    <div class="mb-3">
+      <label for="spesies" class="form-label">Waktu</label>
+      <input type="time" class="form-control" id="spesies" name="spesies"  required>
+    </div>
+    <button type="submit" class="login-button">Simpan</button>
+  </form>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
 @endsection
