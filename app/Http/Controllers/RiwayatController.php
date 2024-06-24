@@ -15,7 +15,7 @@ class RiwayatController extends Controller
 
     public function Riwayat(Request $request)
     {
-        // Tambahkan logika login Anda di sini
+        
     }
 }
 

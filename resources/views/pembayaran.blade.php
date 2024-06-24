@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-  <h3>Daftar Pembayaran Pelanggan</h3>
+<h3 style="text-align: center;">Daftar Pembayaran Pelanggan</h3>
 
   <div class="container">
     <div class="row">
@@ -32,10 +32,10 @@
                 <td>
                   <ul>
                     <li>ACE MAXS Rp. 105.000</li>
-                    <li>Dokter Rp. 25.000</li>
+                    <li>Dokter Rp. 350.000</li>
                   </ul>
                 </td>
-                <td>Rp. 150.000</td>
+                <td>Rp. 455.000</td>
                 <td>
                   <a href="#" class="btn btn-success btn-sm">Cetak Invoice</a>
                 </td>
@@ -60,12 +60,11 @@
                 <th>Resep Obat</th>
                 <th>Total Pembayaran</th>
                 <th>Bayar</th>
-                <th>Hapus</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>28952</td>  <td>ZAHIRA HAIRUNISA BIN DEDE LUKMAN</td>
+                <td>103</td>  <td>NISA</td>
                 <td>LEMPUYANG</td>
                 <td>Pendaftaran</td>
                 <td>
@@ -76,16 +75,13 @@
                 <td>
                   <ul>
                     <li>1 ABOCATH GEA Rp. 252.500</li>
-                    <li>Dokter Rp. 20.000</li>
+                    <li>Dokter Rp. 300.000</li>
                     <li>ACE MAXS (10 x Rp 10.000) Rp. 100.000</li>
                   </ul>
                 </td>
-                <td>Rp. 550.000</td>
+                <td>Rp. 652.500</td>
                 <td>
                   <a href="#" class="btn btn-primary btn-sm">Bayar</a>
-                </td>
-                <td>
-                  <a href="#" class="btn btn-danger btn-sm">Hapus</a>
                 </td>
               </tr>
             </tbody>

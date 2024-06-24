@@ -131,5 +131,9 @@ use App\Http\Controllers\LayananController;
 Route::get('LayananKesehatan', [LayananController::class, 'showLayananForm'])->name('LayananKesehatan');
 Route::post('LayananKesehatan', [LayananController::class, 'LayananKesehatan']);
 
+use App\Http\Controllers\jadwalAdminController;
+Route::get('KelolahJadwal', [jadwalAdminController::class, 'showjadwalAdminForm'])->name('KelolahJadwal');
+Route::post('KelolahJadwal', [jadwalAdminController::class, 'KelolahJadwal']);
+
 // halaman single post
 Route::get('posts/{slug}', [PostController::class, 'show']);
