@@ -2,37 +2,16 @@
 
 @section('container')
     <div class="container">
-        <h2>Data Hewan</h2>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Nama Hewan</th>
-                    <th>Spesies</th>
-                    <th>Ras</th>
-                    <th>Umur</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#" onclick="showAnimalDetail('Kucing Lucy')">Kucing Lucy</a></td>
-                    <td>Kucing</td>
-                    <td>Anggora</td>
-                    <td>3 tahun</td>
-                </tr>
-                <tr>
-                    <td><a href="#" onclick="showAnimalDetail('Anjing Max')">Anjing Max</a></td>
-                    <td>Anjing</td>
-                    <td>Golden Retriever</td>
-                    <td>5 tahun</td>
-                </tr>
-                <!-- Additional animal rows can be dynamically added here -->
-            </tbody>
-        </table>
+        <h5 class="my-4" style="text-align: center;">DATA HEWAN</h5>
 
-        <!-- Button to trigger modal for adding new animal -->
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addAnimalModal">
-            Tambah Hewan
+        <!-- Button to trigger modal for adding new animal --->
+        <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addAnimalModal">
+            <i class="bi bi-plus-circle"></i> Tambah Hewan
         </button>
+
+        <div class="row" id="animalTables">
+            <!-- Konten tabel hewan akan dimuat di sini -->
+        </div>
     </div>
 
     <!-- Modal for adding new animal -->
@@ -61,6 +40,10 @@
                             <label for="age" class="form-label">Umur</label>
                             <input type="text" class="form-control" id="age" name="age" required>
                         </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Deskripsi</label>
+                            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                        </div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </form>
                 </div>
@@ -86,64 +69,103 @@
     </div>
 
     <script>
-        function showAnimalDetail(animalName) {
-            // Simpan nama hewan yang dipilih ke dalam modal
-            document.getElementById('animalNameDetail').textContent = animalName;
+        var animals = [
+            { name: 'Kucing Lucy', species: 'Kucing', breed: 'Anggora', age: '3 tahun', description: 'Kucing yang sangat lucu dan manis.' },
+            { name: 'Anjing Max', species: 'Anjing', breed: 'Golden Retriever', age: '5 tahun', description: 'Anjing yang sangat setia dan ramah.' }
+        ];
 
-            // Disini bisa melakukan pengambilan detail data hewan dari backend atau pengisian manual
-            // Contoh sederhana untuk menampilkan detail
-            var animalDetail = getAnimalDetail(animalName); // Fungsi untuk mengambil detail data hewan dari backend
+        function groupAnimalsBySpecies(animals) {
+            var groupedAnimals = animals.reduce(function(groups, animal) {
+                var species = animal.species;
+                if (!groups[species]) {
+                    groups[species] = [];
+                }
+                groups[species].push(animal);
+                return groups;
+            }, {});
 
-            // Update konten modal dengan detail data hewan yang dipilih
-            document.getElementById('animalDetail').innerHTML = animalDetail;
-
-            // Tampilkan modal
-            var modal = new bootstrap.Modal(document.getElementById('animalDetailModal'));
-            modal.show();
+            return groupedAnimals;
         }
 
-        // Fungsi untuk menambahkan hewan baru
+        function renderAnimalTables() {
+            var animalTables = document.getElementById('animalTables');
+            var groupedAnimals = groupAnimalsBySpecies(animals);
+            var tableHTML = '';
+
+            for (var species in groupedAnimals) {
+                tableHTML += `
+                    <div class="col-md-6">
+                        <h3 class="my-3">${species}</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nama Hewan</th>
+                                        <th>Ras</th>
+                                        <th>Umur</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                `;
+
+                groupedAnimals[species].forEach(function(animal) {
+                    tableHTML += `
+                        <tr>
+                            <td><a href="#" class="text-primary" onclick="showAnimalDetail('${animal.name}')">${animal.name}</a></td>
+                            <td>${animal.breed}</td>
+                            <td>${animal.age}</td>
+                        </tr>
+                    `;
+                });
+
+                tableHTML += `
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            }
+
+            animalTables.innerHTML = tableHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderAnimalTables();
+        });
+
         document.getElementById('addAnimalForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            // Ambil nilai dari form
             var animalName = document.getElementById('animalName').value;
             var species = document.getElementById('species').value;
             var breed = document.getElementById('breed').value;
             var age = document.getElementById('age').value;
+            var description = document.getElementById('description').value;
 
-            // Tambahkan row baru ke tabel
-            var tableBody = document.querySelector('tbody');
-            var newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td><a href="#" onclick="showAnimalDetail('${animalName}')">${animalName}</a></td>
-                <td>${species}</td>
-                <td>${breed}</td>
-                <td>${age}</td>
-            `;
-            tableBody.appendChild(newRow);
+            animals.push({ name: animalName, species: species, breed: breed, age: age, description: description });
 
-            // Reset form
             document.getElementById('addAnimalForm').reset();
 
-            // Tutup modal
             var modal = new bootstrap.Modal(document.getElementById('addAnimalModal'));
             modal.hide();
+
+            renderAnimalTables();
         });
 
-        // Fungsi sederhana untuk mendapatkan detail data hewan dari backend
+        function showAnimalDetail(animalName) {
+            document.getElementById('animalNameDetail').textContent = animalName;
+            var animalDetail = getAnimalDetail(animalName);
+            document.getElementById('animalDetail').innerHTML = animalDetail;
+            var modal = new bootstrap.Modal(document.getElementById('animalDetailModal'));
+            modal.show();
+        }
+
         function getAnimalDetail(animalName) {
-            // Implementasi pengambilan data dari backend bisa dilakukan di sini
-            // Misalnya dengan menggunakan Ajax untuk mengambil data JSON
-            // Contoh sederhana:
-            switch (animalName) {
-                case 'Kucing Lucy':
-                    return '<p>Spesies: Kucing<br>Ras: Anggora<br>Umur: 3 tahun<br>Deskripsi: Lucy adalah kucing yang sangat manis dan ramah.</p>';
-                case 'Anjing Max':
-                    return '<p>Spesies: Anjing<br>Ras: Golden Retriever<br>Umur: 5 tahun<br>Deskripsi: Max adalah anjing yang aktif dan senang bermain bola.</p>';
-                default:
-                    return '<p>Informasi detail tidak tersedia saat ini.</p>';
+            var animal = animals.find(a => a.name === animalName);
+            if (animal) {
+                return <p><strong>Spesies:</strong> ${animal.species}<br><strong>Ras:</strong> ${animal.breed}<br><strong>Umur:</strong> ${animal.age}<br><strong>Deskripsi:</strong><br>${animal.description}</p>;
             }
+            return '<p>Informasi detail tidak tersedia saat ini.</p>';
         }
     </script>
 @endsection

@@ -42,7 +42,13 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/Sistem Klinik Hewan    ', function () {
+Route::get('/homeAdmin', function () {
+    return view('admin.home', [
+        "title" => "Home admin"
+    ]);
+});
+
+Route::get('/Sistem Klinik Hewan', function () {
     return view('beranda', [
         "title" => "Beranda"
     ]);
@@ -84,7 +90,7 @@ Route::post('dokter', [dokterController::class, 'dokter']);
 Route::get('Riwayat', [RiwayatController::class, 'showRiwayatForm'])->name('Riwayat');
 Route::post('Riwayat', [RiwayatController::class, 'Riwayat']);
 
-Route::get('hewan', [hewanController::class, 'showhewanForm'])->name('hewan');
+Route::get('/hewan', [hewanController::class, 'showhewanForm'])->name('hewan');
 Route::post('hewan', [hewanController::class, 'hewan']);
 
 Route::get('DokterAdmin', [DokterAdminController::class, 'showTambahJadwalForm'])->name('DokterAdmin');
@@ -131,14 +137,13 @@ use App\Http\Controllers\LayananController;
 Route::get('/layananKesehatan', [LayananController::class, 'index'])->name('layananKesehatan');
 Route::post('/pilih-layanan', [LayananController::class, 'pilihLayanan'])->name('pilih-layanan');
 
-
 use App\Http\Controllers\jadwalAdminController;
 Route::get('KelolahJadwal', [jadwalAdminController::class, 'showjadwalAdminForm'])->name('KelolahJadwal');
 Route::post('KelolahJadwal', [jadwalAdminController::class, 'KelolahJadwal']);
 
 use App\Http\Controllers\AppointmentController;
-// Rute untuk menyimpan janji temu
 Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
+Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.Riwayat');
 
 
 // halaman single post

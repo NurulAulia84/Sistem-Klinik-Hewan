@@ -3,7 +3,7 @@
 @extends('layout.main')
 
 @section('container')
-    <h1>Halaman Kelola Akun Pengguna</h1>
+    <h3>Halaman Kelola Akun Pengguna</h3>
 
     @if (session('success'))
         <div class="alert alert-success">
