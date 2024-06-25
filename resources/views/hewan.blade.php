@@ -4,7 +4,7 @@
     <div class="container">
         <h2 class="my-4">Data Hewan</h2>
 
-        <!-- Button to trigger modal for adding new animal -->
+        <!-- Button to trigger modal for adding new animal --->
         <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addAnimalModal">
             <i class="bi bi-plus-circle"></i> Tambah Hewan
         </button>
