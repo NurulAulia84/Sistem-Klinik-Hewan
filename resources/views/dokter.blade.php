@@ -115,7 +115,7 @@
   });
 </script>
 
-<!-- Modal janji temu -->
+// <!-- Modal janji temu -->
 <div class="modal fade" id="scheduleModal1" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
