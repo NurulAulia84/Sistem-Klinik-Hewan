@@ -42,7 +42,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/beranda', function () {
+Route::get('/Sistem Klinik Hewan    ', function () {
     return view('beranda', [
         "title" => "Beranda"
     ]);
@@ -134,6 +134,11 @@ Route::post('LayananKesehatan', [LayananController::class, 'LayananKesehatan']);
 use App\Http\Controllers\jadwalAdminController;
 Route::get('KelolahJadwal', [jadwalAdminController::class, 'showjadwalAdminForm'])->name('KelolahJadwal');
 Route::post('KelolahJadwal', [jadwalAdminController::class, 'KelolahJadwal']);
+
+use App\Http\Controllers\AppointmentController;
+// Rute untuk menyimpan janji temu
+Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
+
 
 // halaman single post
 Route::get('posts/{slug}', [PostController::class, 'show']);

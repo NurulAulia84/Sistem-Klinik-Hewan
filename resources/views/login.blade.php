@@ -19,14 +19,14 @@
         <div class="flex flex-col-reverse flex-wrap md:flex-nowrap md:flex-row">
             <div class="md:basis-3/5 flex flex-col">
                 <div class="hidden md:block">
-                    <img src="LogoKlinik.png" alt="Klinik Hewan Logo" style="height: 150px;" />
+                    <img src="{{ asset('LogoKlinik.png') }}" alt="Klinik Hewan Logo" style="height: 150px;" />
                 </div>
 
                 <div class="flex flex-col py-2 md:p-10 gap-4 justify-center h-full items-center" style="margin-top: -80px;">
                     <div class="card w-full md:max-w-xl bg-base-100 shadow-xl p-4 md:p-8">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-                            <p class="text-xs mt-2 text-end">Belum punya akun? <a class="text-primary-500 font-bold" href="{{ ('register') }}">Daftar</a></p>
+                            <p class="text-xs mt-2 text-end">Belum punya akun? <a class="text-primary-500 font-bold" href="{{ route('register') }}">Daftar</a></p>
                             <label class="form-control w-full my-2" for="email">
                                 <div class="label">
                                     <span class="label-text">Email Address</span>
@@ -49,12 +49,12 @@
                                     </label>
                                 </div>
                                 <div>
-                                    <a class="text-primary-500 text-xs" href="/">
+                                    <a class="text-primary-500 text-xs" href="{{ url('/') }}">
                                         Lupa Kata Sandi?
                                     </a>
                                 </div>
                             </div>
-                            <a href="{{ url('/') }}" class="inline-block drop-shadow-xl cursor-pointer leading-6 focus:ring-4 focus:outline-none focus:ring-secondary-300 rounded-full text-sm font-medium px-4 py-2 text-center transition hover:scale-103 text-primary-50 bg-primary-500 hover:bg-primary-600 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-full my-2" type="submit">Masuk</a>
+                            <button class="inline-block drop-shadow-xl cursor-pointer leading-6 focus:ring-4 focus:outline-none focus:ring-secondary-300 rounded-full text-sm font-medium px-4 py-2 text-center transition hover:scale-103 text-primary-50 bg-primary-500 hover:bg-primary-600 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-full my-2" type="submit">Masuk</button>
                         </form>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                         Login.
                     </h1>
                     <p class="mt-4">
-                    Senang bertemu Anda kembali lagi :)
+                        Senang bertemu Anda kembali lagi :)
                     </p>
                 </div>
             </div>

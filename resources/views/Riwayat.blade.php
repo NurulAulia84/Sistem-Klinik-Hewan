@@ -12,24 +12,28 @@
                     <thead>
                         <tr>
                             <th>ID Reservasi</th>
-                            <th>Nama Pemilik</th>
                             <th>Nama Hewan</th>
-                            <th>Jenis Hewan</th>
+                            <th>Umur</th>
+                            <th>Ras</th>
+                            <th>Spesies</th>
+                            <th>Keluhan</th>
+                            <th>Dokter</th>
                             <th>Tanggal Reservasi</th>
                             <th>Waktu</th>
-                            <th>Dokter</th>
                             <th>Cetak Detail</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>203</td>
-                            <td>ADE</td>
-                            <td>kitty</td>
+                            <td>01</td>
+                            <td>Kitty</td>
+                            <td>7 Bulan</td>
+                            <td> -</td>
                             <td>Kucing</td>
-                            <td>01-06-2024</td>
-                            <td>09.00-10.30</td>
-                            <td>Dr. Jennifer</td>
+                            <td>Batuk Pilek</td>
+                            <td>Dr. Jane Smith</td>
+                            <td>06-06-2024</td>
+                            <td>11.00</td>
                             <td>
                                 <a href="#" class="btn btn-success btn-sm">Cetak Detail</a>
                             </td>
@@ -45,28 +49,32 @@
             <h4>Belum Selesai</h4>
             <div class="table-responsive">
                 <table class="table table-striped" style="width: 100%;">
-                    <thead>
+                <thead>
                         <tr>
                             <th>ID Reservasi</th>
-                            <th>Nama Pemilik</th>
                             <th>Nama Hewan</th>
-                            <th>Jenis Hewan</th>
+                            <th>Umur</th>
+                            <th>Ras</th>
+                            <th>Spesies</th>
+                            <th>Keluhan</th>
+                            <th>Dokter</th>
                             <th>Tanggal Reservasi</th>
                             <th>Waktu</th>
-                            <th>Dokter</th>
-                            <th>Selesaikan</th>
+                            <th>Selesai</th>
                             <th>Batal</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>28952</td>
-                            <td>ZAHIRA HAIRUNISA BIN DEDE LUKMAN</td>
-                            <td>Boy</td>
+                            <td>05</td>
+                            <td>Blacky</td>
+                            <td>13 Bulan</td>
+                            <td> -</td>
                             <td>Anjing</td>
-                            <td>02-06-2024</td>
-                            <td>10.00-11.30</td>
-                            <td>Dr. Jane</td>
+                            <td>Muntah-Muntah</td>
+                            <td>Dr. Jennifer</td>
+                            <td>06-06-2024</td>
+                            <td>11.00</td>
                             <td>
                                 <a href="#" class="btn btn-primary btn-sm">Selesaikan</a>
                             </td>
