@@ -2,11 +2,11 @@
 
 @section('container')
     <div class="container">
-        <h2>Data Hewan</h2>
+        <h2 class="my-4">Data Hewan</h2>
 
         <!-- Button to trigger modal for adding new animal -->
-        <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#addAnimalModal">
-            Tambah Hewan
+        <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addAnimalModal">
+            <i class="bi bi-plus-circle"></i> Tambah Hewan
         </button>
 
         <div class="row" id="animalTables">
@@ -95,29 +95,35 @@
             for (var species in groupedAnimals) {
                 tableHTML += `
                     <div class="col-md-6">
-                        <h3>${species}</h3>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Nama Hewan</th>
-                                    <th>Ras</th>
-                                    <th>Umur</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                        <h3 class="my-3">${species}</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nama Hewan</th>
+                                        <th>Ras</th>
+                                        <th>Umur</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                 `;
 
                 groupedAnimals[species].forEach(function(animal) {
                     tableHTML += `
                         <tr>
-                            <td><a href="#" onclick="showAnimalDetail('${animal.name}')">${animal.name}</a></td>
+                            <td><a href="#" class="text-primary" onclick="showAnimalDetail('${animal.name}')">${animal.name}</a></td>
                             <td>${animal.breed}</td>
                             <td>${animal.age}</td>
                         </tr>
                     `;
                 });
 
-                tableHTML += '</tbody></table></div>';
+                tableHTML += `
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
             }
 
             animalTables.innerHTML = tableHTML;
@@ -157,7 +163,7 @@
         function getAnimalDetail(animalName) {
             var animal = animals.find(a => a.name === animalName);
             if (animal) {
-                return `<p>Spesies: ${animal.species}<br>Ras: ${animal.breed}<br>Umur: ${animal.age}<br>Deskripsi: ${animal.description}</p>`;
+                return `<p><strong>Spesies:</strong> ${animal.species}<br><strong>Ras:</strong> ${animal.breed}<br><strong>Umur:</strong> ${animal.age}<br><strong>Deskripsi:</strong><br>${animal.description}</p>`;
             }
             return '<p>Informasi detail tidak tersedia saat ini.</p>';
         }
