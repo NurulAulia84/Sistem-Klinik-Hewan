@@ -128,8 +128,9 @@ Route::get('KonfirmasiJanji', [KonfirmasiJanjiController::class, 'showKonfirmasi
 Route::post('KonfirmasiJanji', [KonfirmasiJanjiController::class, 'KonfirmasiJanji']);
 
 use App\Http\Controllers\LayananController;
-Route::get('LayananKesehatan', [LayananController::class, 'showLayananForm'])->name('LayananKesehatan');
-Route::post('LayananKesehatan', [LayananController::class, 'LayananKesehatan']);
+Route::get('/layananKesehatan', [LayananController::class, 'index'])->name('layananKesehatan');
+Route::post('/pilih-layanan', [LayananController::class, 'pilihLayanan'])->name('pilih-layanan');
+
 
 use App\Http\Controllers\jadwalAdminController;
 Route::get('KelolahJadwal', [jadwalAdminController::class, 'showjadwalAdminForm'])->name('KelolahJadwal');

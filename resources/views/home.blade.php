@@ -7,6 +7,7 @@
     <h1>Selamat Datang!</h1>
     <p>Sistem klinik hewan online ini adalah untuk mengatasi
     beberapa kendala dalam proses mendapatkan layanan di klinik hewan saat ini.</p>
+    <a href="{{ url('/layananKesehatan') }}" class="login-button">Layanan Kesehatan</a>
 </div>
 
 <div class="half-page-bg">

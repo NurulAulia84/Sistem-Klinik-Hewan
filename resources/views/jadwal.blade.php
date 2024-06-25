@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="style.css">
 
 <div class="jadwal-container">
-  <h2>Jadwal Dokter</h2>
+  <h2 style="text-align: center;">Jadwal Dokter</h2>
   <div class="table-responsive">
     <table class="table table-striped" style="width: 100%;">
       <thead>

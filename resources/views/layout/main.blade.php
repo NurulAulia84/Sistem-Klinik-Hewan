@@ -69,7 +69,7 @@
   </div>
 
   <!-- Modal for Doctor Schedule -->
-  <div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -85,13 +85,13 @@
               </tr>
             </thead>
             <tbody id="scheduleTableBody">
-              <!-- Jadwal akan dimuat di sini dengan AJAX -->
+            
             </tbody>
           </table>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="container mt-4">
     @yield('container')
