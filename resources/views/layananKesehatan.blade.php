@@ -21,7 +21,7 @@
     <td>1</td>
     <td>Vaksinasi Rabies</td>
     <td>Pemberian vaksin untuk mencegah rabies pada hewan peliharaan.</td>
-    <td>Rp 150.000</td>
+    <td>Rp 180.000</td>
    </tr>
    <tr>
     <td><input type="checkbox" name="layanan[]" value="2"></td>
@@ -35,14 +35,14 @@
     <td>3</td>
     <td>Grooming Anjing</td>
     <td>Layanan perawatan anjing termasuk mandi, potong kuku, dan sisir bulu.</td>
-    <td>Rp 200.000</td>
+    <td>Rp 250.000</td>
    </tr>
    <tr>
     <td><input type="checkbox" name="layanan[]" value="4"></td>
     <td>4</td>
     <td>Pengobatan Infeksi Telinga</td>
     <td>Penanganan infeksi telinga pada hewan peliharaan dengan obat dan pembersihan telinga.</td>
-    <td>Rp 250.000</td>
+    <td>Rp 255.000</td>
    </tr>
    <tr>
     <td><input type="checkbox" name="layanan[]" value="5"></td>

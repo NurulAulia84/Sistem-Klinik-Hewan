@@ -20,7 +20,7 @@
           <td>20-April-2024</td>
           <td>07.00-12.00</td>
         </tr>
-        <tr>
+        <>
           <td>Dr. Jennifer</td>
           <td>10-Desember-2024</td>
           <td>07.00-12.00</td>

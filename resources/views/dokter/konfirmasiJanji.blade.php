@@ -34,10 +34,6 @@
         </tbody>
     </table>
 
-    <p>Terima kasih telah membuat janji temu di klinik hewan kami!</p>
-    <p>Silahkan datang 15 menit sebelum jadwal janji temu Anda. 
-        Jangan lupa membawa hewan peliharaan Anda dan dokumen kesehatan yang diperlukan.</p>
-
     <form method="POST" action="{{ route('KonfirmasiJanji') }}">
         @csrf
         <button type="submit" class="btn btn-primary">Konfirmasi Janji</button>
