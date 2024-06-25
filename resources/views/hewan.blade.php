@@ -10,7 +10,7 @@
         </button>
 
         <div class="row" id="animalTables">
-            <!-- Konten tabel hewan akan dimuat di sini -->
+            <!--- Konten tabel hewan akan dimuat di sini -->
         </div>
     </div>
 
