@@ -115,35 +115,60 @@
   });
 </script>
 
-// <!-- Modal janji temu -->
+<!-- Modal janji temu -->
 <div class="modal fade" id="scheduleModal1" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="scheduleModalLabel">Buat Janji</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="scheduleModalLabel">Buat Janji</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form method="POST" action="{{ route('appointments.store') }}">
+    @csrf
+    <div class="mb-3">
+        <label for="nama_hewan" class="form-label">Nama Hewan</label>
+        <input type="text" class="form-control" id="nama_hewan" name="nama_hewan" required>
+    </div>
+    <div class="mb-3">
+        <label for="umur" class="form-label">Umur</label>
+        <input type="text" class="form-control" id="umur" name="umur" required>
+    </div>
+    <div class="mb-3">
+        <label for="ras" class="form-label">Ras</label>
+        <input type="text" class="form-control" id="ras" name="ras" required>
+    </div>
+    <div class="mb-3">
+        <label for="spesies" class="form-label">Spesies</label>
+        <input type="text" class="form-control" id="spesies" name="spesies" required>
+    </div>
+    <div class="mb-3">
+        <label for="keluhan" class="form-label">Keluhan</label>
+        <input type="text" class="form-control" id="keluhan" name="keluhan" required>
+    </div>
+    <div class="mb-3">
+        <label for="dokter" class="form-label">Dokter</label>
+        <select class="form-select" id="dokter" name="dokter" required>
+            <option value="">Pilih Dokter</option>
+            <option value="Dr. Jane Smith">Dr. Jane Smith</option>
+            <option value="Dr. Jennifer">Dr. Jennifer</option>
+            <option value="Dr. Elizabeth">Dr. Elizabeth</option>
+            <option value="Dr. Lorial Spentus">Dr. Lorial Spentus</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="tanggal" class="form-label">Tanggal</label>
+        <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+    </div>
+    <div class="mb-3">
+        <label for="waktu" class="form-label">Waktu</label>
+        <input type="time" class="form-control" id="waktu" name="waktu" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Buat Janji Temu</button>
+</form>
+            </div>
         </div>
-        <div class="modal-body">
-  <form id="jadwalForm">
-  <div class="mb-3">
-      <label for="ras" class="form-label">Nama hewan</label>
-      <input type="text" class="form-control" id="ras" name="ras" required>
     </div>
-    <div class="mb-3">
-      <label for="namaHewan" class="form-label">Tanggal</label>
-      <input type="date" class="form-control" id="namaHewan" name="namaHewan" required>
-    </div>
-    <div class="mb-3">
-      <label for="spesies" class="form-label">Waktu</label>
-      <input type="time" class="form-control" id="spesies" name="spesies"  required>
-    </div>
-    <button type="submit" class="login-button">Simpan</button>
-  </form>
 </div>
 
-      </div>
-    </div>
-  </div>
-
-  <div class="container mt-4">
 @endsection

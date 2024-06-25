@@ -1,8 +1,7 @@
 <?php
-// REGISTRER CONTROLLER
+
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -14,24 +13,27 @@ class RegisterController extends Controller
         return view('register');
     }
 
-    public function register(Request $request)
+    public function store(Request $request)
     {
+        // Validasi data input dari form
         $request->validate([
             'nama' => 'required|string|max:255',
             'alamat' => 'required|string|max:255',
-            'no_telepon' => 'required|string|max:15',
+            'no_telepon' => 'required|string|max:20',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8',
         ]);
 
-        $user = User::create([
-            'nama' => $request->nama,
-            'alamat' => $request->alamat,
-            'no_telepon' => $request->no_telepon,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        // Simpan data ke dalam database
+        $user = new User();
+        $user->name = $request->nama;
+        $user->alamat = $request->alamat;
+        $user->phone = $request->no_telepon;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
 
-        return redirect()->route('login')->with('success', 'Registration successful! Please login.');
+        // Redirect ke halaman login atau halaman lainnya
+        return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
     }
 }
