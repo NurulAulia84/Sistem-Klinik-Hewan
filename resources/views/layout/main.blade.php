@@ -29,7 +29,7 @@
             <a class="nav-link {{ ($title === 'hewan') ? 'active' : '' }}" href="/hewan">Hewan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'Riwayat') ? 'active' : '' }}" href="/Riwayat">Riwayat</a>
+            <a class="nav-link {{ ($title === 'Daftar Janji Temu') ? 'active' : '' }}" href="/appointments">Riwayat</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ ($title === 'pembayaran') ? 'active' : '' }}" href="/pembayaran">Pembayaran</a>

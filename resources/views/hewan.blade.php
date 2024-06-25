@@ -4,15 +4,17 @@
     <div class="container">
         <h2 class="my-4">Data Hewan</h2>
 
+        <!--- Button to trigger modal for adding new animal --->
         <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addAnimalModal">
             <i class="bi bi-plus-circle"></i> Tambah Hewan
         </button>
 
         <div class="row" id="animalTables">
-            <!-- Konten tabel hewan akan dimuat di sini -->
+            <!--- Konten tabel hewan akan dimuat di sini -->
         </div>
     </div>
 
+    <!-- Modal for adding new animal -->
     <div class="modal fade" id="addAnimalModal" tabindex="-1" aria-labelledby="addAnimalModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -49,6 +51,7 @@
         </div>
     </div>
 
+    <!-- Modal for displaying animal details -->
     <div class="modal fade" id="animalDetailModal" tabindex="-1" aria-labelledby="animalDetailModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -166,3 +169,5 @@
         }
     </script>
 @endsection
+
+
