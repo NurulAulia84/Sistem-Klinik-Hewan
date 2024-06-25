@@ -25,7 +25,7 @@
 
                 <div class="flex flex-col py-2 md:p-10 gap-4 justify-center h-full items-center" style="margin-top: -90px;">
                     <div class="card w-full md:max-w-xl bg-base-100 shadow-xl p-4 md:p-8">
-                    <form method="POST" action="{{ route('register.store') }}">
+                    <form method="POST" action="{{ route('registrasi.store') }}">
     @csrf
     <p class="text-xs mt-2 text-end">Sudah punya akun? <a class="text-primary-500 font-bold" href="{{ route('login') }}">Masuk</a></p>
 
