@@ -23,7 +23,7 @@
             <h5 class="card-title">Dr. Jane Smith</h5>
             <p class="card-text">Dr. Jane Smith adalah seorang dokter hewan yang berbakat dan berdedikasi dalam bidangnya. Dengan latar belakang pendidikan yang kuat 
                     dan pengalaman klinis yang luas, dia telah menjadi salah satu ahli terkemuka dalam perawatan hewan.</p>
-                    <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-doctor-id="1">Jadwal</button>
+                    <a href="{{ ('jadwal') }}" class="login-button">Jadwal</a>
                     <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal1" data-doctor-id="1">Janji Temu</button>
           </div>
         </div>
@@ -39,7 +39,7 @@
             <h5 class="card-title">Dr. Elizabeth</h5>
             <p class="card-text">Dr. Elizabeth adalah seorang dokter hewan yang berbakat dan berdedikasi dalam bidangnya. Dengan latar belakang pendidikan yang kuat 
                     dan pengalaman klinis yang luas, dia telah menjadi salah satu ahli terkemuka dalam perawatan hewan.</p>
-            <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-doctor-id="1">Jadwal</button>
+            <a href="{{ ('jadwal') }}" class="login-button">Jadwal</a>
             <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal1" data-doctor-id="1">Janji Temu</button>
           </div>
         </div>
@@ -60,7 +60,7 @@
             <h5 class="card-title">Dr. Lorial Spentus</h5>
             <p class="card-text">Dr. Lorial Spentus adalah seorang dokter hewan yang berbakat dan berdedikasi dalam bidangnya. Dengan latar belakang pendidikan yang kuat 
                     dan pengalaman klinis yang luas, dia telah menjadi salah satu ahli terkemuka dalam perawatan hewan.</p>
-            <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-doctor-id="1">Jadwal</button>
+            <a href="{{ ('jadwal') }}" class="login-button">Jadwal</a>
             <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal1" data-doctor-id="1">Janji Temu</button>
           </div>
         </div>
@@ -77,7 +77,7 @@
             <h5 class="card-title">Dr. Jennifer</h5>
             <p class="card-text">Dr. Jennifer adalah seorang dokter hewan yang berbakat dan berdedikasi dalam bidangnya. Dengan latar belakang pendidikan yang kuat 
                     dan pengalaman klinis yang luas, dia telah menjadi salah satu ahli terkemuka dalam perawatan hewan.</p>
-            <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-doctor-id="1">Jadwal</button>
+            <a href="{{ ('jadwal') }}" class="login-button">Jadwal</a>
             <button class="login-button" data-bs-toggle="modal" data-bs-target="#scheduleModal1" data-doctor-id="1">Janji Temu</button>
           </div>
         </div>
@@ -164,7 +164,7 @@
         <label for="waktu" class="form-label">Waktu</label>
         <input type="time" class="form-control" id="waktu" name="waktu" required>
     </div>
-    <button type="submit" class="btn btn-primary">Buat Janji Temu</button>
+    <button type="submit" class="login-button">Buat Janji Temu</button>
 </form>
             </div>
         </div>
