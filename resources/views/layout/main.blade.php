@@ -12,7 +12,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
-        <img src="LogoKlinik.png" alt="Klinik Hewan Logo" style="height: 150px;">
+        <img src="logo klink.png" alt="Klinik Hewan Logo" style="height: 40px;">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
             <a class="nav-link {{ ($title === 'dokter') ? 'active' : '' }}" href="/dokter">Dokter</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'hewan') ? 'active' : '' }}" href="/hewan">Hewan</a>
+            <a class="nav-link {{ ($title === 'hewan') ? 'active' : '' }}" href="/hewans">Hewan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ ($title === 'Daftar Janji Temu') ? 'active' : '' }}" href="/appointments">Riwayat</a>

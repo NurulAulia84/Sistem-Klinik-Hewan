@@ -2,8 +2,14 @@
 
 @section('container')
     <div class="container">
-<<<<<<< HEAD
-        <h3 style="text-align: center;">DATA HEWAN</h3>
+        <h5 style="text-align: center;">{{ $title }}</h5>
+
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -14,28 +20,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><a href="#" onclick="showAnimalDetail('Kucing Lucy')">Kucing Lucy</a></td>
-                    <td>Kucing</td>
-                    <td>Anggora</td>
-                    <td>3 tahun</td>
-                </tr>
-                <tr>
-                    <td><a href="#" onclick="showAnimalDetail('Anjing Max')">Anjing Max</a></td>
-                    <td>Anjing</td>
-                    <td>Golden Retriever</td>
-                    <td>5 tahun</td>
-                </tr>
-                <!-- Additional animal rows can be dynamically added here -->
+                @foreach($hewans as $hewan)
+                    <tr>
+                        <td><a href="#" onclick="showAnimalDetail('{{ $hewan->nama }}')">{{ $hewan->nama }}</a></td>
+                        <td>{{ $hewan->spesies }}</td>
+                        <td>{{ $hewan->ras }}</td>
+                        <td>{{ $hewan->umur }} tahun</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
 
         <!-- Button to trigger modal for adding new animal -->
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addAnimalModal">
             Tambah Hewan
-=======
-
->>>>>>> a421df14ce5de95fc020c280d3acc8d9c14a9e5e
         </button>
     </div>
 
@@ -48,22 +46,23 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="addAnimalForm">
+                    <form id="addAnimalForm" method="POST" action="{{ route('hewans.store') }}">
+                        @csrf
                         <div class="mb-3">
                             <label for="animalName" class="form-label">Nama Hewan</label>
-                            <input type="text" class="form-control" id="animalName" name="animalName" required>
+                            <input type="text" class="form-control" id="animalName" name="nama" required>
                         </div>
                         <div class="mb-3">
                             <label for="species" class="form-label">Spesies</label>
-                            <input type="text" class="form-control" id="species" name="species" required>
+                            <input type="text" class="form-control" id="species" name="spesies" required>
                         </div>
                         <div class="mb-3">
                             <label for="breed" class="form-label">Ras</label>
-                            <input type="text" class="form-control" id="breed" name="breed" required>
+                            <input type="text" class="form-control" id="breed" name="ras" required>
                         </div>
                         <div class="mb-3">
                             <label for="age" class="form-label">Umur</label>
-                            <input type="text" class="form-control" id="age" name="age" required>
+                            <input type="text" class="form-control" id="age" name="umur" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </form>
@@ -90,77 +89,6 @@
     </div>
 
     <script>
-<<<<<<< HEAD
-=======
-        var animals = [
-            { name: 'Kucing Lucy', species: 'Kucing', breed: 'Anggora', age: '3 tahun', description: 'Kucing yang sangat lucu dan manis.' },
-            { name: 'Anjing Max', species: 'Anjing', breed: 'Golden Retriever', age: '5 tahun', description: 'Anjing yang sangat setia dan ramah.' }
-        ];
-
-        function groupAnimalsBySpecies(animals) {
-            var groupedAnimals = animals.reduce(function(groups, animal) {
-                var species = animal.species;
-                if (!groups[species]) {
-                    groups[species] = [];
-                }
-                groups[species].push(animal);
-                return groups;
-            }, {});
-
-            return groupedAnimals;
-        }
-
-        function renderAnimalTables() {
-            var animalTables = document.getElementById('animalTables');
-            var groupedAnimals = groupAnimalsBySpecies(animals);
-            var tableHTML = '';
-
-            for (var species in groupedAnimals) {
-                tableHTML += `
-                    <div class="col-md-6">
-
-                `;
-
-                groupedAnimals[species].forEach(function(animal) {
-                    tableHTML += `
-                        <tr>
-
-                            <td>${animal.breed}</td>
-                            <td>${animal.age}</td>
-                        </tr>
-                    `;
-                });
-
-
-            }
-
-            animalTables.innerHTML = tableHTML;
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            renderAnimalTables();
-        });
-
-        document.getElementById('addAnimalForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            var animalName = document.getElementById('animalName').value;
-            var species = document.getElementById('species').value;
-            var breed = document.getElementById('breed').value;
-            var age = document.getElementById('age').value;
-            var description = document.getElementById('description').value;
-
-            animals.push({ name: animalName, species: species, breed: breed, age: age, description: description });
-
-            document.getElementById('addAnimalForm').reset();
-
-            var modal = new bootstrap.Modal(document.getElementById('addAnimalModal'));
-            modal.hide();
-
-            renderAnimalTables();
-        });
-
->>>>>>> a421df14ce5de95fc020c280d3acc8d9c14a9e5e
         function showAnimalDetail(animalName) {
             // Simpan nama hewan yang dipilih ke dalam modal
             document.getElementById('animalNameDetail').textContent = animalName;
@@ -177,38 +105,18 @@
             modal.show();
         }
 
-        // Fungsi untuk menambahkan hewan baru
-        document.getElementById('addAnimalForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Ambil nilai dari form
-            var animalName = document.getElementById('animalName').value;
-            var species = document.getElementById('species').value;
-            var breed = document.getElementById('breed').value;
-            var age = document.getElementById('age').value;
-
-            // Tambahkan row baru ke tabel
-            var tableBody = document.querySelector('tbody');
-            var newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td><a href="#" onclick="showAnimalDetail('${animalName}')">${animalName}</a></td>
-                <td>${species}</td>
-                <td>${breed}</td>
-                <td>${age}</td>
-            `;
-            tableBody.appendChild(newRow);
-
-            // Reset form
-            document.getElementById('addAnimalForm').reset();
-
-            // Tutup modal
-            var modal = new bootstrap.Modal(document.getElementById('addAnimalModal'));
-            modal.hide();
-        });
-
         // Fungsi sederhana untuk mendapatkan detail data hewan dari backend
         function getAnimalDetail(animalName) {
-
+            // Implementasi pengambilan data dari backend bisa dilakukan di sini
+            // Misalnya dengan menggunakan Ajax untuk mengambil data JSON
+            // Contoh sederhana:
+            switch (animalName) {
+                case 'Kucing Lucy':
+                    return '<p>Spesies: Kucing<br>Ras: Anggora<br>Umur: 3 tahun<br>Deskripsi: Lucy adalah kucing yang sangat manis dan ramah.</p>';
+                case 'Anjing Max':
+                    return '<p>Spesies: Anjing<br>Ras: Golden Retriever<br>Umur: 5 tahun<br>Deskripsi: Max adalah anjing yang aktif dan senang bermain bola.</p>';
+                default:
+                    return '<p>Informasi detail tidak tersedia saat ini.</p>';
             }
         }
     </script>

@@ -1,21 +1,30 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Hewan;
 use Illuminate\Http\Request;
 
-class hewanController extends Controller
+class HewanController extends Controller
 {
-    public function showhewanForm()
+    public function index()
     {
-        return view('hewan', [
-            "title" => "hewan"
-        ]);
+        $title = "DAFTAR HEWAN";
+        $hewans = Hewan::all();
+        return view('hewan', compact('hewans', 'title'));
     }
 
-    public function hewan(Request $request)
+    public function store(Request $request)
     {
-        
+        $request->validate([
+            'nama' => 'required',
+            'spesies' => 'required',
+            'ras' => 'required',
+            'umur' => 'required',
+        ]);
+
+        Hewan::create($request->all());
+
+        return redirect()->route('hewan')->with('success', 'Hewan berhasil ditambahkan.');
     }
 }
-

@@ -54,7 +54,7 @@
   left: -5%;
   position: relative;
   width: 1222px;
-  height: 130vh; /* Mengatur tinggi halaman penuh */
+  height: 160vh; /* Mengatur tinggi halaman penuh */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +111,7 @@
 
 .welcome-container {
   position: absolute; /* Changed to absolute positioning */
-  top: 130px;
+  top: 110px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2; /* Ensure it is above the navbar */

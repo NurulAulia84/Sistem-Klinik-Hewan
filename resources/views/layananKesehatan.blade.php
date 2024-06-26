@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-<h2>Daftar Layanan Kesehatan Hewan</h2>
+<h4 style="text-align: center;">DAFTAR LAYANAN KESEHATAN HEWAN</h4>
 
 <form action="/pilih-layanan" method="POST">
  @csrf

@@ -90,9 +90,6 @@ Route::post('dokter', [dokterController::class, 'dokter']);
 Route::get('Riwayat', [RiwayatController::class, 'showRiwayatForm'])->name('Riwayat');
 Route::post('Riwayat', [RiwayatController::class, 'Riwayat']);
 
-Route::get('/hewan', [hewanController::class, 'showhewanForm'])->name('hewan');
-Route::post('hewan', [hewanController::class, 'hewan']);
-
 Route::get('DokterAdmin', [DokterAdminController::class, 'showTambahJadwalForm'])->name('DokterAdmin');
 Route::post('DokterAdmin', [DokterAdminController::class, 'DOkterAdmin']);
 
@@ -143,8 +140,11 @@ Route::post('KelolahJadwal', [jadwalAdminController::class, 'KelolahJadwal']);
 
 use App\Http\Controllers\AppointmentController;
 Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
-Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.Riwayat');
+Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.index');
 
+Route::get('/hewans', [HewanController::class, 'index'])->name('hewan');
+Route::post('/hewans', [HewanController::class, 'store'])->name('hewans.store');
 
 // halaman single post
 Route::get('posts/{slug}', [PostController::class, 'show']);
+
