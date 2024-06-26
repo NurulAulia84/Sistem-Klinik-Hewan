@@ -2,6 +2,7 @@
 
 @section('container')
     <div class="container">
+<<<<<<< HEAD
         <h3 style="text-align: center;">DATA HEWAN</h3>
         <table class="table table-bordered">
             <thead>
@@ -32,6 +33,9 @@
         <!-- Button to trigger modal for adding new animal -->
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addAnimalModal">
             Tambah Hewan
+=======
+
+>>>>>>> a421df14ce5de95fc020c280d3acc8d9c14a9e5e
         </button>
     </div>
 
@@ -86,6 +90,77 @@
     </div>
 
     <script>
+<<<<<<< HEAD
+=======
+        var animals = [
+            { name: 'Kucing Lucy', species: 'Kucing', breed: 'Anggora', age: '3 tahun', description: 'Kucing yang sangat lucu dan manis.' },
+            { name: 'Anjing Max', species: 'Anjing', breed: 'Golden Retriever', age: '5 tahun', description: 'Anjing yang sangat setia dan ramah.' }
+        ];
+
+        function groupAnimalsBySpecies(animals) {
+            var groupedAnimals = animals.reduce(function(groups, animal) {
+                var species = animal.species;
+                if (!groups[species]) {
+                    groups[species] = [];
+                }
+                groups[species].push(animal);
+                return groups;
+            }, {});
+
+            return groupedAnimals;
+        }
+
+        function renderAnimalTables() {
+            var animalTables = document.getElementById('animalTables');
+            var groupedAnimals = groupAnimalsBySpecies(animals);
+            var tableHTML = '';
+
+            for (var species in groupedAnimals) {
+                tableHTML += `
+                    <div class="col-md-6">
+
+                `;
+
+                groupedAnimals[species].forEach(function(animal) {
+                    tableHTML += `
+                        <tr>
+
+                            <td>${animal.breed}</td>
+                            <td>${animal.age}</td>
+                        </tr>
+                    `;
+                });
+
+
+            }
+
+            animalTables.innerHTML = tableHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderAnimalTables();
+        });
+
+        document.getElementById('addAnimalForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var animalName = document.getElementById('animalName').value;
+            var species = document.getElementById('species').value;
+            var breed = document.getElementById('breed').value;
+            var age = document.getElementById('age').value;
+            var description = document.getElementById('description').value;
+
+            animals.push({ name: animalName, species: species, breed: breed, age: age, description: description });
+
+            document.getElementById('addAnimalForm').reset();
+
+            var modal = new bootstrap.Modal(document.getElementById('addAnimalModal'));
+            modal.hide();
+
+            renderAnimalTables();
+        });
+
+>>>>>>> a421df14ce5de95fc020c280d3acc8d9c14a9e5e
         function showAnimalDetail(animalName) {
             // Simpan nama hewan yang dipilih ke dalam modal
             document.getElementById('animalNameDetail').textContent = animalName;
@@ -133,16 +208,7 @@
 
         // Fungsi sederhana untuk mendapatkan detail data hewan dari backend
         function getAnimalDetail(animalName) {
-            // Implementasi pengambilan data dari backend bisa dilakukan di sini
-            // Misalnya dengan menggunakan Ajax untuk mengambil data JSON
-            // Contoh sederhana:
-            switch (animalName) {
-                case 'Kucing Lucy':
-                    return '<p>Spesies: Kucing<br>Ras: Anggora<br>Umur: 3 tahun<br>Deskripsi: Lucy adalah kucing yang sangat manis dan ramah.</p>';
-                case 'Anjing Max':
-                    return '<p>Spesies: Anjing<br>Ras: Golden Retriever<br>Umur: 5 tahun<br>Deskripsi: Max adalah anjing yang aktif dan senang bermain bola.</p>';
-                default:
-                    return '<p>Informasi detail tidak tersedia saat ini.</p>';
+
             }
         }
     </script>
