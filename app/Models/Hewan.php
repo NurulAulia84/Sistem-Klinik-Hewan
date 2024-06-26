@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Hewan extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nama', 'spesies', 'ras', 'umur'];
 }

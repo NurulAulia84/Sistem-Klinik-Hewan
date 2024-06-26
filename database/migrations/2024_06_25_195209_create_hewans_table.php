@@ -1,5 +1,4 @@
 <?php
-// database/migrations/{timestamp}_create_hewans_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,10 +10,10 @@ class CreateHewansTable extends Migration
     {
         Schema::create('hewans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_hewan');
+            $table->string('nama');
             $table->string('spesies');
             $table->string('ras');
-            $table->integer('umur');
+            $table->string('umur');
             $table->timestamps();
         });
     }

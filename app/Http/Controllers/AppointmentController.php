@@ -7,6 +7,7 @@ use App\Models\Appointment;
 
 class AppointmentController extends Controller
 {
+
     public function index()
     {
         // Ambil semua janji temu dari database
