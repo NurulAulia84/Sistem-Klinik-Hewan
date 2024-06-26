@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>{{ $title }}</h1>
+        <h5 style="text-align: center;">{{ $title }}</h5>
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
