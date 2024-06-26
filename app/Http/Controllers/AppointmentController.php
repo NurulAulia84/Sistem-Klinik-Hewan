@@ -11,7 +11,7 @@ class AppointmentController extends Controller
     public function index()
     {
         // Ambil semua janji temu dari database
-        $title = 'Daftar Janji Temu';
+        $title = 'RIWAYAT JANJI TEMU';
         $appointments = Appointment::all();
 
         // Tampilkan view dengan daftar janji temu
