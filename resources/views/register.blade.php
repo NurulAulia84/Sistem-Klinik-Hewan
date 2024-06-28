@@ -12,7 +12,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://demo.saasykit.com/build/assets/app-2d85f3e3.css" data-navigate-track="reload">
-
 </head>
 
 <body class="text-primary-900">
@@ -25,51 +24,49 @@
 
                 <div class="flex flex-col py-2 md:p-10 gap-4 justify-center h-full items-center" style="margin-top: -90px;">
                     <div class="card w-full md:max-w-xl bg-base-100 shadow-xl p-4 md:p-8">
-                    <form method="POST" action="{{ route('registrasi.store') }}">
-    @csrf
-    <p class="text-xs mt-2 text-end">Sudah punya akun? <a class="text-primary-500 font-bold" href="{{ route('login') }}">Masuk</a></p>
+                        <form method="POST" action="{{ route('registrasi.store') }}">
+                            @csrf
+                            <p class="text-xs mt-2 text-end">Sudah punya akun? <a class="text-primary-500 font-bold" href="{{ route('login') }}">Masuk</a></p>
 
-    <label class="form-control w-full my-2" for="nama">
-        <div class="label">
-            <span class="label-text">Nama Pengguna</span>
-        </div>
-        <input type="text" class="input input-bordered input-md w-full" name="nama" required autofocus autocomplete="nama" id="nama">
-    </label>
+                            <label class="form-control w-full my-2" for="nama">
+                                <div class="label">
+                                    <span class="label-text">Nama Pengguna</span>
+                                </div>
+                                <input type="text" class="input input-bordered input-md w-full" name="nama" required autofocus autocomplete="nama" id="nama">
+                            </label>
 
-    <label class="form-control w-full my-2" for="alamat">
-        <div class="label">
-            <span class="label-text">Alamat</span>
-        </div>
-        <input type="text" class="input input-bordered input-md w-full" name="alamat" required autofocus autocomplete="alamat" id="alamat">
-    </label>
+                            <label class="form-control w-full my-2" for="alamat">
+                                <div class="label">
+                                    <span class="label-text">Alamat</span>
+                                </div>
+                                <input type="text" class="input input-bordered input-md w-full" name="alamat" required autofocus autocomplete="alamat" id="alamat">
+                            </label>
 
-    <label class="form-control w-full my-2" for="no_telepon">
-        <div class="label">
-            <span class="label-text">No Telepon</span>
-        </div>
-        <input type="text" class="input input-bordered input-md w-full" name="no_telepon" required autofocus autocomplete="no_telepon" id="no_telepon">
-    </label>
+                            <label class="form-control w-full my-2" for="no_telepon">
+                                <div class="label">
+                                    <span class="label-text">No Telepon</span>
+                                </div>
+                                <input type="text" class="input input-bordered input-md w-full" name="no_telepon" required autofocus autocomplete="no_telepon" id="no_telepon">
+                            </label>
 
-    <label class="form-control w-full my-2" for="email">
-        <div class="label">
-            <span class="label-text">Email Address</span>
-        </div>
-        <input type="email" class="input input-bordered input-md w-full" name="email" required autofocus autocomplete="email" id="email">
-    </label>
+                            <label class="form-control w-full my-2" for="email">
+                                <div class="label">
+                                    <span class="label-text">Email Address</span>
+                                </div>
+                                <input type="email" class="input input-bordered input-md w-full" name="email" required autofocus autocomplete="email" id="email">
+                            </label>
 
-    <label class="form-control w-full my-2" for="password">
-        <div class="label">
-            <span class="label-text">Password</span>
-        </div>
-        <input type="password" class="input input-bordered input-md w-full" name="password" required id="password">
-    </label>
+                            <label class="form-control w-full my-2" for="password">
+                                <div class="label">
+                                    <span class="label-text">Password</span>
+                                </div>
+                                <input type="password" class="input input-bordered input-md w-full" name="password" required id="password">
+                            </label>
 
-    <button class="inline-block drop-shadow-xl cursor-pointer leading-6 focus:ring-4 focus:outline-none focus:ring-secondary-300 rounded-full text-sm font-medium px-4 py-2 text-center transition hover:scale-103 text-primary-50 bg-primary-500 hover:bg-primary-600 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-full my-2" type="submit">
-        Daftar
-    </button>
-</form>
-
-
+                            <button class="inline-block drop-shadow-xl cursor-pointer leading-6 focus:ring-4 focus:outline-none focus:ring-secondary-300 rounded-full text-sm font-medium px-4 py-2 text-center transition hover:scale-103 text-primary-50 bg-primary-500 hover:bg-primary-600 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-full my-2" type="submit">
+                                Daftar
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -100,7 +97,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

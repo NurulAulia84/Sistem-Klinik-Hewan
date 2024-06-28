@@ -8,7 +8,7 @@
     <p>Sistem klinik hewan online ini adalah untuk mengatasi
     beberapa kendala dalam proses mendapatkan layanan di klinik hewan saat ini.</p>
     <a href="{{ ('/layananKesehatan') }}" class="login-button">Layanan Kesehatan</a>
-    <a href="{{ ('/hewan') }}" class="login-button">Daftarkan Peliharaanmu</a>
+    <a href="{{ ('/hewans') }}" class="login-button">Daftarkan Peliharaanmu</a>
 </div>
 
 <div class="half-page-bg">
