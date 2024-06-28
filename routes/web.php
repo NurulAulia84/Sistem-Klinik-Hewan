@@ -1,10 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\jadwalController;
-use App\Http\Controllers\RegistrasiUserController;
 use App\Http\Controllers\pembayaranController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\hewanController;
@@ -24,11 +22,11 @@ use App\Models\Post;
 |
 */
 
-Route::get('/registrasi', function () {
-    return view('registrasi', [
-        "title" => "Registrasi"
-    ]);
-});
+// Route::get('/registrasi', function () {
+//     return view('register', [
+//         "title" => "Registrasi"
+//     ]);
+// });
 
 // use App\Http\Middleware\Authenticate;
 
@@ -80,6 +78,14 @@ Route::get('/test-connection', function () {
     return response()->json($results);
 });
 
+// routes\web.php
+
+// dalam routes/web.php
+
+use App\Http\Controllers\RegistrasiController;
+
+Route::get('/registrasi', [RegistrasiController::class, 'create'])->name('registrasi.create');
+Route::post('/registrasi', [RegistrasiController::class, 'store'])->name('registrasi.store');
 
 Route::get('pembayaran', [pembayaranController::class, 'showpembayaranForm'])->name('pembayaran');
 Route::post('pembayaran', [pembayaranController::class, 'pembayaran']);
@@ -95,16 +101,6 @@ Route::post('DokterAdmin', [DokterAdminController::class, 'DOkterAdmin']);
 
 Route::get('TambahHewan', [hewanAdminController::class, 'showTambahHewanForm'])->name('TambahHewan');
 Route::post('TambahHewan', [hewanAdminController::class, 'TambahHewan']);
-
-// Route untuk menampilkan halaman registrasi
-Route::get('/registrasi_user', [RegistrasiUserController::class, 'register'])->name('registrasi.register');
-
-// Route untuk menangani form submission registrasi
-Route::post('/registrasi_user/registrasi', [RegistrasiUserController::class, 'store'])->name('registrasi.store');
-
-use App\Http\Controllers\RegisterController;
-Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('register');
-Route::post('register', [RegisterController::class, 'register']);
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);

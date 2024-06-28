@@ -26,7 +26,7 @@
                     <div class="card w-full md:max-w-xl bg-base-100 shadow-xl p-4 md:p-8">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-                            <p class="text-xs mt-2 text-end">Belum punya akun? <a class="text-primary-500 font-bold" href="{{ route('register') }}">Daftar</a></p>
+                            <p class="text-xs mt-2 text-end">Belum punya akun? <a class="text-primary-500 font-bold" href="{{ route('registrasi.store') }}">Daftar</a></p>
                             <label class="form-control w-full my-2" for="email">
                                 <div class="label">
                                     <span class="label-text">Email Address</span>
